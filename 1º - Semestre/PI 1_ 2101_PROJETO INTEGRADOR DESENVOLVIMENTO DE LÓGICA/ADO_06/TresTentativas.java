@@ -20,20 +20,14 @@ public class TresTentativas {
 
 			case "a":
 			case "A":
-
-				
-				if (tentativas == 2) {
-					System.out.println("\nResposta incorreta nas 3 tentativas.\n");
-				} else {
-					System.out.println("\nResposta incorreta. Você tem mais " + (2 - tentativas) + " tentativa(s).\n");
-				}
-				tentativas += 1;
-				break;
-
 			case "b":
 			case "B":
+			case "d":
+			case "D":
+			case "e":
+			case "E":
 
-				
+		
 				if (tentativas == 2) {
 					System.out.println("\nResposta incorreta nas 3 tentativas.\n");
 				} else {
@@ -42,35 +36,12 @@ public class TresTentativas {
 				tentativas += 1;
 				break;
 
+			
 			case "c": //RESPOSTA CORRETA
 			case "C": //RESPOSTA CORRETA
 
 				System.out.println("\nResposta correta na " + (tentativas + 1) + "ª tentativa.");
 				cond = false;
-				break;
-
-			case "d":
-			case "D":
-
-				
-				if (tentativas == 2) {
-					System.out.println("\nResposta incorreta nas 3 tentativas.\n");
-				} else {
-					System.out.println("\nResposta incorreta. Você tem mais " + (2 - tentativas) + " tentativa(s).\n");
-				}
-				tentativas += 1;
-				break;
-
-			case "e":
-			case "E":
-
-				
-				if (tentativas == 2) {
-					System.out.println("\nResposta incorreta nas 3 tentativas.\n");
-				} else {
-					System.out.println("\nResposta incorreta. Você tem mais " + (2 - tentativas) + " tentativa(s).\n");
-				}
-				tentativas += 1;
 				break;
 
 			default:
