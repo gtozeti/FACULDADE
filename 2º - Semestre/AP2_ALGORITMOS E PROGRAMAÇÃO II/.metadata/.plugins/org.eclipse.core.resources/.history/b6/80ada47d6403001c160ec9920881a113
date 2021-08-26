@@ -1,0 +1,44 @@
+import java.util.Random;
+
+public class Ex07 {
+
+	public static void main(String[] args) {
+
+		Random valorRandom = new Random();
+		int q = 0;
+
+		while (q < 3) {
+			q = valorRandom.nextInt(4);
+
+		}
+
+		int[][] m = new int[q][q];
+		popMatrizes(m);
+
+		for (int i = 0; i < m.length; i++) {
+			for (int j = 0; j < m[i].length; j++) {
+
+				System.out.printf("%d ", (m[i][j]));
+
+			}
+			System.out.println();
+		}
+
+	}
+
+	static void popMatrizes(int[][] m) {
+
+		Random valorRandom = new Random();
+
+		for (int i = 0; i < m.length; i++) {
+			for (int j = 0; j < m[0].length; j++) {
+
+				m[i][j] = valorRandom.nextInt(9);
+
+			}
+
+		}
+
+	}
+
+}

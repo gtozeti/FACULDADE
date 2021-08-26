@@ -1,0 +1,82 @@
+import java.util.Random;
+
+public class Ex07 {
+
+	public static void main(String[] args) {
+
+		int[][] m = new int[3][3];
+		//int[][] m = {{8,0,7}, {4,5,6}, {3,10,2}};
+		//int[][] m = { { 1, 1, 1 }, { 1, 1, 1 }, { 1, 1, 1 } };
+		boolean cond;
+
+		cond = popMatrizes(m);
+
+		for (int i = 0; i < m.length; i++) {
+			for (int j = 0; j < m[i].length; j++) {
+
+				System.out.printf("%d ", (m[i][j]));
+
+			}
+			System.out.println();
+		}
+
+		if (cond) {
+
+			System.out.println("\nA matriz acima forma um quadrado mágico!");
+			System.out.println(cond);
+		} else {
+			System.out.println("\nA matriz acima não forma um quadrado mágico!");
+			System.out.println(cond);
+		}
+
+	}
+
+	static boolean popMatrizes(int[][] m) {
+
+		Random valorRandom = new Random();
+		boolean cond = false;
+		int[][] soma = new int[m.length][2];
+
+		int dp = 0, ds = 0;
+
+		for (int i = 0; i < m.length; i++) {
+			for (int j = 0; j < m.length; j++) {
+
+				m[i][j] = valorRandom.nextInt(9);
+
+				soma[i][0] += m[i][j];
+				soma[j][1] += m[i][j];
+
+				if (i == j) {
+					dp += m[i][j];
+				}
+				if ((i + 1) + (j + 1) == m.length + 1) {
+					ds += m[i][j];
+				}
+
+			}
+
+		}
+
+		if (ds != dp) {
+			return cond;
+		} else {
+
+			for (int i = 0; i < soma.length; i++) {
+				for (int j = 0; j < soma[0].length; j++) {
+
+					if (soma[i][j] != ds) {
+
+						break;
+
+					}
+
+				}
+
+			}
+			cond = true;
+			return cond;
+		}
+	}
+
+}
