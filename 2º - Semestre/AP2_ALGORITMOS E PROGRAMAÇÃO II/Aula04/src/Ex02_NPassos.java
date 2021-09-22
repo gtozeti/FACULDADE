@@ -6,7 +6,7 @@ public class Ex02_NPassos {
 
 	public static void main(String[] args) {
 
-		//DeclaraÃ§Ã£o da variavÃ©l random
+		//Declaração da variavél random
 		Random valorRandom = new Random();
 		
 		//Definindo um valor para o vetor
@@ -19,11 +19,7 @@ public class Ex02_NPassos {
 		//Populando o vetor com valores random
 		popVet(v); 
 		
-		Arrays.sort(v);
 		System.out.println(Arrays.toString(v));
-		System.out.println(v[0]);
-		System.out.println(v[v.length-1]);
-		
 		passos(v);
 		
 	}
@@ -41,7 +37,7 @@ public class Ex02_NPassos {
 
 	}
 
-	public static int passos(int[] v) {
+	public static void passos(int[] v) {
 		
 		int maior = 0, menor = 0, passos = 0;
 		
@@ -60,9 +56,9 @@ public class Ex02_NPassos {
 			passos += 1;
 		}
 		
-		System.out.printf("%d | %d | %d",maior,menor, passos);
+		System.out.printf("Maior número: %d | Menor número: %d | Passos: %d",maior,menor, passos);
+		System.out.printf("\nA diferença absoluta foi: %d", Math.abs(maior - menor));
 		
-		return -1;
 		
 	}
 }
