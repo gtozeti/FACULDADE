@@ -106,3 +106,4 @@ insert into consulta(fk_medico_codm,fk_paciente_codp,data_,hora) values
 
 select * from consulta;
 
+

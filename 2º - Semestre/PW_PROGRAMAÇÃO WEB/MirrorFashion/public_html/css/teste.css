@@ -1,0 +1,28 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23 de set. de 2021, 20:30:55
+    Author     : PICHAU
+*/
+
+body{
+    background-color: #00F; /*#0000FF ou  blue*/
+    color: #FFF; /*#FFF ou  white*/
+}
+
+p {
+    color: #080; /*#008000 ou  green*/
+
+}
+
+.cor-preta{
+   color: #000; /*#000000 ou  black*/
+
+}
+
+.cor-vermelha{
+     color: #F00; /*#FF0000 ou  red*/
+}

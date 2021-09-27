@@ -11,14 +11,15 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
-public class Aula05_Ex01_Fr_Empregado2 extends javax.swing.JFrame {
+
+public class Aula06_Ex01_Fr_Produto extends javax.swing.JFrame {
 
      public Connection con;
     public Statement st;
     public ResultSet resultado = null;
     int a;
     
-    public Aula05_Ex01_Fr_Empregado2() {
+    public Aula06_Ex01_Fr_Produto() {
         initComponents();
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -41,12 +42,6 @@ public class Aula05_Ex01_Fr_Empregado2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -64,72 +59,7 @@ public class Aula05_Ex01_Fr_Empregado2 extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 593, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jButton6.setText("Inserir");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-
-        jButton7.setText("Excluir");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-
-        jButton8.setText("Gravar");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-
-        jButton9.setText("Atualizar");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton9)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton6)
-                    .addComponent(jButton7)
-                    .addComponent(jButton8)
-                    .addComponent(jButton9))
-                .addContainerGap(12, Short.MAX_VALUE))
-        );
 
         jLabel1.setText("Nome");
 
@@ -182,12 +112,6 @@ public class Aula05_Ex01_Fr_Empregado2 extends javax.swing.JFrame {
 
         jLabel4.setText("Código:");
 
-        jTextField6.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextField6FocusLost(evt);
-            }
-        });
-
         jLabel5.setText("Nome do empregado:");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -237,32 +161,29 @@ public class Aula05_Ex01_Fr_Empregado2 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTabbedPane1))
-                .addContainerGap())
+            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(17, 17, 17)
+                    .addComponent(jTabbedPane1)
+                    .addGap(18, 18, 18)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 349, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(19, 19, 19)
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(68, Short.MAX_VALUE)))
         );
 
-        jTabbedPane1.getAccessibleContext().setAccessibleDescription("");
-
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-         try {
+
+        try {
 
             String query = "select * from empregado where nome like '" +jTextField1.getText()+"%'";
 
@@ -272,11 +193,11 @@ public class Aula05_Ex01_Fr_Empregado2 extends javax.swing.JFrame {
             while (resultado.next()) {
 
                 //JOptionPane.showMessageDialog(null, "Registro encontrado!");
-                jTextArea1.append(resultado.getString("id") +" - "+ resultado.getString("nome") +" - "+ resultado.getString("cidade")+" - "+resultado.getString("endereco") + " \n");
+                jTextArea1.append(resultado.getString("nome") + "\n");
                 //jTextField1.setText(resultado.getString("nome"));
-                //jTextField3.setText(resultado.getString("cidade"));   
+                //jTextField3.setText(resultado.getString("cidade"));
                 //jTextField2.setText(resultado.getString("endereco"));
-            } 
+            }
 
         } catch (Exception e) {
 
@@ -284,80 +205,6 @@ public class Aula05_Ex01_Fr_Empregado2 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro ao encontrar o usuário com o nome informado!");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-        a = 1;
-        jTextField6.setEnabled(false);
-        jTabbedPane1.setSelectedIndex(1);
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-         try {
-            String nome, cidade, endereco;
-            nome = jTextField3.getText();
-            cidade = jTextField5.getText();
-            endereco = jTextField4.getText();
-            String linhasql = "insert into empregado (nome, cidade, endereco) value ('%s','%s','%s');".formatted(nome, cidade, endereco);
-            st.executeUpdate(linhasql);
-            JOptionPane.showMessageDialog(null, "Dados inseridos com sucesso!");
-            jTextField3.setText("");
-            jTextField4.setText("");
-            jTextField5.setText("");
-            
-        } catch (Exception e) {
-
-            System.out.println(e);
-            JOptionPane.showMessageDialog(null, "Erro ao inserir os dados!");
-        }
-    }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-        try {
-             
-            String query = "delete from empregado where id = " + jTextField6.getText();
-
-            st.executeUpdate(query);
-            JOptionPane.showMessageDialog(null, "Registro excluído!");
-            jTextField6.setText("");
-            jTextField3.setText("");
-            jTextField4.setText("");
-            jTextField5.setText("");
-
-        } catch (Exception e) {
-
-            System.out.println(e);
-            JOptionPane.showMessageDialog(null, "Erro ao excluir o usuário com o ID informado!");
-        }
-    }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jTextField6FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField6FocusLost
-        // TODO add your handling code here:
-          try {
-
-            String query = "select * from empregado where id = %s".formatted(jTextField6.getText());
-
-            resultado = st.executeQuery(query);
-
-            if (resultado.next()) {
-
-                jTextField3.setText(resultado.getString("nome"));
-                jTextField4.setText(resultado.getString("endereco"));
-                jTextField5.setText(resultado.getString("cidade"));
-            } else {
-                JOptionPane.showMessageDialog(null, "Registro não encontrado!");
-                
-            }
-
-        } catch (Exception e) {
-
-            System.out.println(e);
-            JOptionPane.showMessageDialog(null, "Erro ao encontrar o usuário com o ID informado!");
-        }
-        
-    }//GEN-LAST:event_jTextField6FocusLost
 
     /**
      * @param args the command line arguments
@@ -376,38 +223,31 @@ public class Aula05_Ex01_Fr_Empregado2 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Aula05_Ex01_Fr_Empregado2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Aula06_Ex01_Fr_Produto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Aula05_Ex01_Fr_Empregado2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Aula06_Ex01_Fr_Produto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Aula05_Ex01_Fr_Empregado2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Aula06_Ex01_Fr_Produto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Aula05_Ex01_Fr_Empregado2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Aula06_Ex01_Fr_Produto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Aula05_Ex01_Fr_Empregado2().setVisible(true);
+                new Aula06_Ex01_Fr_Produto().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;

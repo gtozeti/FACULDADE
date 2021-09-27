@@ -25,7 +25,7 @@ public class Ex01_LeitorArquivo {
 	    int[] vetor = new int[tam];
 	    // separar os dados da linha
 	    String[] dados = linha2.split(" ");
-	    // armazenar ps dados no vetor de resultado
+	    // armazenar os dados no vetor de resultado
 	    for (int i = 0; i < vetor.length; i++) {
 	      vetor[i] = Integer.parseInt(dados[i]);
 	    }
