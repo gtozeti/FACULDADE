@@ -1,5 +1,3 @@
-import java.awt.SystemColor;
-
 public class Aula07_Ex04_RecursivoBin {
 
 	public static void main(String[] args) {
