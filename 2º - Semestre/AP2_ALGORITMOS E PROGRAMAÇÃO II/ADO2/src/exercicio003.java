@@ -23,7 +23,7 @@ public class exercicio003 {
     }
 
     public static int orelhasCoelho(int n) {
-        // Condiçãoo base para parar a recursão
+        // Condição base para parar a recursão
         if (n == 0) {
             return 0;
         }

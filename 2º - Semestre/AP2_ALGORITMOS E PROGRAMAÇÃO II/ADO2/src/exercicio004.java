@@ -7,7 +7,7 @@ public class exercicio004 {
      * Gustavo Tozeti Herculano
      * 
      * 4. (2,0) Dada uma string, criar uma função recursiva (sem laços) que compute
-     * o número de caracteres ’x’ na string.
+     * o número de caracteres 'x' na string.
      * 
      * Exemplos: 
      * contarX("xxhixx") -> 4 

@@ -4,7 +4,7 @@ public class Aula11_Ex01_QuickSort {
 
 	public static void main(String[] args) {
 
-		int[] v = { 5, 6, 2, 7, 9, 1, 8, 3, 7 };
+		int[] v = { 5, 8, 2, 1, 7, 4 };
 
 		quickSort(v, 0, v.length - 1);
 
