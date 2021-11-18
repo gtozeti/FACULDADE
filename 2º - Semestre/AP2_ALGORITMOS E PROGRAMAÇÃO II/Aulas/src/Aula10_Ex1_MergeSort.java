@@ -1,6 +1,7 @@
 import java.util.Arrays;
 
-public class teste {
+public class Aula10_Ex1_MergeSort {
+
 
 	public static void main(String[] args) {
 
@@ -56,5 +57,4 @@ public class teste {
 			
 		}
 	}
-
 }
