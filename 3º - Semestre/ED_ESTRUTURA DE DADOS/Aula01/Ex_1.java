@@ -1,7 +1,6 @@
-
 import java.util.Random;
 
-public class Exemplo1 {
+public class Ex_1 {
 
     private static final int MAX = 20; //Valor final da constante, não podendo ser alterado durante a execução do código
 
