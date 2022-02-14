@@ -12,7 +12,7 @@ public class Ex_1 {
         mm = inserir(p);
         mostrar(p);
 
-        System.out.println("\nMenor: " + mm[0]);
+        System.out.println("\nMenor : " + mm[0]);
         System.out.println("Maior: " + mm[1]);
 
     }
