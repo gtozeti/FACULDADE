@@ -22,7 +22,7 @@ public class ado1_pib {
         // String[][] dadosPIB = leituraPIB(file1);
         // imprimePIB(dadosPIB);
 
-        leituraRegioes(file2);
+        //leituraRegioes(file2);
 
     }
 
