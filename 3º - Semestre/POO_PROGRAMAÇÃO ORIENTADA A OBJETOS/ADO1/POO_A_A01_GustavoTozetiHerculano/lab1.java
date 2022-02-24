@@ -1,3 +1,4 @@
+package POO_A_A01_GustavoTozetiHerculano;
 import java.io.*;
 import java.util.ArrayList;
 
@@ -24,7 +25,7 @@ import java.util.ArrayList;
  *           Date: 21/02/2022
  */
 
-public class ado1 {
+public class lab1 {
 
     public static void main(String[] args) {
 

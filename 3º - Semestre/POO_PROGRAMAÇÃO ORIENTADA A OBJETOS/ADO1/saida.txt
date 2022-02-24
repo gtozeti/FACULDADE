@@ -1,5 +1,0 @@
-PIB da região Norte = 221,50
-PIB da região Nordeste = 551,00
-PIB da região Sudeste = 2294,00
-PIB da região Sul = 671,00
-PIB da região Centro-Oeste = 324,00
