@@ -19,10 +19,11 @@ public class ado1_pib {
         String file1 = "./pib.txt";
         String file2 = "./regioes.txt";
 
-        // String[][] dadosPIB = leituraPIB(file1);
-        // imprimePIB(dadosPIB);
+        String[][] dadosPIB = leituraPIB(file1);
+        imprimePIB(dadosPIB);
 
-        //leituraRegioes(file2);
+        ArrayList<String[]> dadosRegioes = leituraRegioes(file2);
+        geraArquivoSaida(dadosPIB, dadosRegioes);
 
     }
 
@@ -118,31 +119,108 @@ public class ado1_pib {
 
     }
 
-    public static void leituraRegioes(String file2){
-        ArrayList<String> regioes = new ArrayList<>(); // ArrayList para armazenar as regioes
+    /**
+     * Função para realizar a leitura dos dados do arquivo regioes.txt
+     * 
+     * @param file2
+     * @return Um ArrayList com os estados separados por regiões
+     */
+    public static ArrayList<String[]> leituraRegioes(String file2) {
 
-        
-        String linha = null, frase =null;
+        ArrayList<String[]> regioes = new ArrayList<>(); // ArrayList para armazenar as regioes
+        ArrayList<String> informacoes = new ArrayList<>(); // ArrayList para armazenar os estados das regioes
+
+        String linha = null, frase = null;
 
         try {
 
             // Abrir o arquivo com a codificação "UTF-8"
             BufferedReader leituraBuff = new BufferedReader(new InputStreamReader(new FileInputStream(file2), "UTF-8"));
 
+            int index = 0;
+
             // Loop para leitura de cada linha do arquivo e armazenamento nos ArraysList
             while ((linha = leituraBuff.readLine()) != null) {
                 frase = linha;
-                if(frase.isEmpty()){
-                    System.out.println("aqui");
+                if (frase.isEmpty()) {
+                    String[] k = new String[informacoes.size()];
+                    for (int i = 0; i < informacoes.size(); i++) {
+                        k[i] = informacoes.get(i);
+                    }
+                    regioes.add(index, k);
+                    informacoes.clear();
+                    index++;
+                } else {
+                    informacoes.add(frase);
                 }
-                System.out.println();
 
             }
+            String[] k = new String[informacoes.size()];
+            for (int i = 0; i < informacoes.size(); i++) {
+                k[i] = informacoes.get(i);
+            }
+            regioes.add(index, k);
+
+            return regioes;
+        }
+
+        // Tratamento de erro, para caso o arquivo não exista
+        catch (FileNotFoundException erro) {
+            System.out.println("Arquivo " + file2 + " não existe: ");
+        }
+
+        // Tratamento de erro, para leitura do arquivo
+        catch (IOException erro) {
+            System.out.println("Erro na leitura do arquivo " + file2);
+        }
+
+        // Tratamento de algum outro erro que possa encontrar durante a execução da
+        // função
+        catch (Exception erro) {
+            System.out.println("Foi encontrado o seginte erro na leitura do arquivo " + file2 + ": \n" + erro);
+        }
+
+        // Retorna null caso exista algum erro na leitura do arquivo
+        return null;
 
     }
-    catch(Exception e){
-        System.out.println(e);
-    }
 
-}
+    public static void geraArquivoSaida(String[][] dadosPIB, ArrayList<String[]> dadosRegioes) {
+
+        String arquivoDeSaida = "./saida.txt";
+
+        try {
+
+            // Escrever o arquivo com a codificação "UTF-8"
+            BufferedWriter escritaBuff = new BufferedWriter(
+                    new OutputStreamWriter(new FileOutputStream(arquivoDeSaida), "UTF-8"));
+
+            for (int i = 0; i < dadosRegioes.size(); i++) {
+                Float soma = 0.0f;
+                for (int j = 1; j < dadosRegioes.get(i).length; j++) {
+                    for (int k = 0; k < dadosPIB.length; k++) {
+                        if (dadosRegioes.get(i)[j].equals(dadosPIB[k][0])) {
+                            soma += Float.parseFloat(dadosPIB[k][1]);
+                            break;
+                        }
+                    }
+                }
+
+                String info = "PIB da região " + dadosRegioes.get(i)[0] + " = " + soma.toString().format("%.2f", soma);
+
+                escritaBuff.write(info);
+                if (i != dadosRegioes.size()-1){
+
+                    escritaBuff.newLine();
+                }
+            }
+            // Fechar o arquivo
+            escritaBuff.close();
+        }
+
+        catch (IOException ex) {
+            System.out.println("Erro de escrita em '" + arquivoDeSaida + "'");
+        }
+
+    }
 }
