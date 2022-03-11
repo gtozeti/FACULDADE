@@ -122,7 +122,7 @@ public class ado1_pib {
     /**
      * Função para realizar a leitura dos dados do arquivo regioes.txt
      * 
-     * @param file2
+     * @param file2 Arquivo regioes
      * @return Um ArrayList com os estados separados por regiões
      */
     public static ArrayList<String[]> leituraRegioes(String file2) {
@@ -185,8 +185,15 @@ public class ado1_pib {
 
     }
 
+    /**
+     * Função para gerar o arquivo saída.txt com a soma dos PIBs por regiões
+     * 
+     * @param dadosPIB Matriz com com estados e PIB
+     * @param dadosRegioes ArrayList com os estados agrupados por regiões
+     */
     public static void geraArquivoSaida(String[][] dadosPIB, ArrayList<String[]> dadosRegioes) {
 
+        //Nome do arquivo de saída
         String arquivoDeSaida = "./saida.txt";
 
         try {
@@ -195,6 +202,7 @@ public class ado1_pib {
             BufferedWriter escritaBuff = new BufferedWriter(
                     new OutputStreamWriter(new FileOutputStream(arquivoDeSaida), "UTF-8"));
 
+            // Loop para percorrer a
             for (int i = 0; i < dadosRegioes.size(); i++) {
                 Float soma = 0.0f;
                 for (int j = 1; j < dadosRegioes.get(i).length; j++) {
