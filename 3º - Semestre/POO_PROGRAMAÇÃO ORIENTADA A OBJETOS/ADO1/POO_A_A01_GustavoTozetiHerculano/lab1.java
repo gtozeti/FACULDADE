@@ -1,8 +1,22 @@
+package POO_A_A01_GustavoTozetiHerculano;
 import java.io.*;
 import java.util.ArrayList;
 
 /**
- * Class Description . . .
+ * ADO1
+ * Deseja-se um aplicativo capaz de tomar os dados em um arquivo de texto
+ * contendo os PIBs por estado do Brasil (pib.txt) carregá-los na memória e executar
+ * os seguintes itens:
+ * 
+ * a-) Imprimir na tela a lista de PIB por estado em percentual em relação ao total.
+ * b-) Gerar um arquivo de saída (saida.txt) sumarizando (somando) o PIB por
+ * regiões. 
+ * 
+ * Será fornecida uma lista de estados por regiões que deve ser lida do
+ * arquivo regioes.txt
+ * 
+ * O aluno deve compilar, testar, empacotar e enviar para o instrutor nos devidos 
+ * formatos
  *
  * @author: Gustavo Tozeti Herculano
  * @version: 1.0
@@ -11,7 +25,7 @@ import java.util.ArrayList;
  *           Date: 21/02/2022
  */
 
-public class ado1_pib {
+public class lab1 {
 
     public static void main(String[] args) {
 
@@ -185,15 +199,16 @@ public class ado1_pib {
 
     }
 
-    /**
-     * Função para gerar o arquivo saída.txt com a soma dos PIBs por regiões
-     * 
-     * @param dadosPIB Matriz com com estados e PIB
-     * @param dadosRegioes ArrayList com os estados agrupados por regiões
-     */
+ 
+     /**
+      * Função para gerar a escrita do arquivo saida.txt sumarizando os PIBs por regiões
+      *
+      * @param dadosPIB Matriz com os dados do PIB
+      * @param dadosRegioes ArrayList com os dados das regiões
+      */
     public static void geraArquivoSaida(String[][] dadosPIB, ArrayList<String[]> dadosRegioes) {
 
-        //Nome do arquivo de saída
+        // Nome do arquivo de saída com o caminho relativo
         String arquivoDeSaida = "./saida.txt";
 
         try {
@@ -202,7 +217,7 @@ public class ado1_pib {
             BufferedWriter escritaBuff = new BufferedWriter(
                     new OutputStreamWriter(new FileOutputStream(arquivoDeSaida), "UTF-8"));
 
-            // Loop para percorrer a
+            // Loop para comparação de Estado entre o ArrayList e a Matriz, para sumarização por regição                   
             for (int i = 0; i < dadosRegioes.size(); i++) {
                 Float soma = 0.0f;
                 for (int j = 1; j < dadosRegioes.get(i).length; j++) {
@@ -214,9 +229,13 @@ public class ado1_pib {
                     }
                 }
 
+                // Armazenando a frase para escrita do arquivo
                 String info = "PIB da região " + dadosRegioes.get(i)[0] + " = " + soma.toString().format("%.2f", soma);
 
+                // Escrita no arquivo
                 escritaBuff.write(info);
+
+                // Caso seja a última região, não adiciona uma linha vazia
                 if (i != dadosRegioes.size()-1){
 
                     escritaBuff.newLine();
@@ -226,6 +245,7 @@ public class ado1_pib {
             escritaBuff.close();
         }
 
+        // Tratamento de erro, para caso não seja possível a escrita no arquivo
         catch (IOException ex) {
             System.out.println("Erro de escrita em '" + arquivoDeSaida + "'");
         }
