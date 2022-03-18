@@ -9,7 +9,7 @@ public static void main(String[] args) {
 
     CustoPintura cp = new CustoPintura();
     cp.carreagr();
-    cp.calcular();
+    //cp.calcular();
     
 
 
