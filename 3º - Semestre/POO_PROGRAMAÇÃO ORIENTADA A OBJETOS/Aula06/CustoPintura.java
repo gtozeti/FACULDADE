@@ -11,8 +11,6 @@ public static void main(String[] args) {
     cp.carreagr();
     //cp.calcular();
     
-
-
 }
 
 public CustoPintura(){
@@ -35,10 +33,10 @@ public void calcular(){
     int counter = 0;
     for(Forma f:formas){
         counter ++;
-        double atmp = f.calcularArea();
+        double atmp = f.calcularArea(); //POLIMORFISMO AQUI
         areaTotal+= atmp;
         // System.out.printf("A area da forma %d que é um %s é: %.2f\n",counter,f.getClass().getSimpleName(), atmp);
-        System.out.println(f);
+        System.out.println(f); //POLIMORFISMO AQUI
     }
 System.out.printf("A area total é: %.2f\n" , areaTotal);
 }
