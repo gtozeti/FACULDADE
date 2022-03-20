@@ -1,8 +1,10 @@
 public class PlanoA  extends Beneficiario{
     
+    // Atributos da subclasse
     private String exame1;
     private String exame2;
 
+    // Contrutor da subclasse
     public PlanoA(String nome, String cpf, int idade, String exame1, String exame2){
         super(nome, cpf, idade);
         this.exame1 = exame1;
@@ -25,12 +27,13 @@ public class PlanoA  extends Beneficiario{
         this.exame2 = exame2;
     }
 
+    // Override do método autorizaConsulta da superclasse, para retorno de String de status de autorização do exame
     @Override
     public String autorizaConsulta(){
         if (exame1 == "Oftalmologista" && getIdade() < 18){
             return "NÃO AUTORIZADO";
         }
-        //O get informação vem através do SUPER
+        //A informação do get vem através do SUPER -- *LEMBRETE*
         else if(exame2 == "Dermatologista" && getIdade() == 45)
             return "NÃO AUTORIZADO";
         
@@ -39,6 +42,7 @@ public class PlanoA  extends Beneficiario{
         }
         }
 
+    // Override do método toString da superclasse, para retorno do método toString da superclasse mais as informações de exames e autorização
     @Override
     public String toString(){
         return String.format("\n%s, está marcando os exames %s e %s. Status do pedido: %s.",super.toString(), exame1, exame2, autorizaConsulta());

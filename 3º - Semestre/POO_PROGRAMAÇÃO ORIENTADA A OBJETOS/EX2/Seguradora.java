@@ -10,11 +10,13 @@ public class Seguradora {
         seg.validaOperacao();
     }
 
+    // Inicialização do ArrayList
     public Seguradora(){
         beneficiario = new ArrayList<Beneficiario>();
     }
 
 
+    // População do ArrayList com as subclasses
     public void informaPaciente(){
 
         beneficiario.add(new PlanoA("Enzo Lorenzo Assunção", "248.491.088-65", 27, "Oftalmologista", "Dermatologista"));
@@ -27,6 +29,7 @@ public class Seguradora {
         beneficiario.add(new PlanoB("Rebeca Sarah Martins", "397.351.819-08", 55, 800.41, 456.75));
     }
 
+    // Impressão dos exemplos de Polimorfismo
     public void validaOperacao(){
 
         for (Beneficiario pessoa: beneficiario){

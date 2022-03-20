@@ -1,15 +1,17 @@
 public class Beneficiario {
 
-    
+// Atributos da superclasse    
 private String nome;
 private String cpf;
 private int idade;
 
+// Contrutor da superclasse   
 public Beneficiario( String nome, String cpf, int idade){
     this.nome = nome;
     this.cpf = cpf;
     this.idade = idade;
 }
+
 
 public String getNome() {
     return nome;
@@ -39,6 +41,7 @@ public String autorizaConsulta(){
     return "";
 }
 
+// Override do método toString
 @Override
 public String toString() {
     return "O(a) paciente " + nome + ", com CPF "+ cpf + " e idade " + idade;
