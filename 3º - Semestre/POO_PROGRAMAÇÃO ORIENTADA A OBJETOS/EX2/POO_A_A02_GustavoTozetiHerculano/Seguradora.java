@@ -1,5 +1,19 @@
 import java.util.ArrayList;
 
+/**
+ * Desenvolver um pequeno exemplo baseado em herança e polimorfismo.
+ * O software deve conter ao menos 2 subclasses e ter ao menos 1 
+ * Override. Deve haver um vetor ou lista com processamento polimorfico no
+ * método com @Override. O tipo deste vetor deve ser o mesmo da 
+ * Superclasse.
+ *
+ * @author: Gustavo Tozeti Herculano
+ * @version: 1.0
+ *           Main Class File: topAXX.java
+ *           File: Structure.java
+ *           Date: 20/03/2022
+ */
+
 public class Seguradora {
     
     private ArrayList<Beneficiario> beneficiario;
