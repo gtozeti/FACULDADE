@@ -1,10 +1,11 @@
-public class Paciente {
+public class Beneficiario {
+
     
 private String nome;
 private String cpf;
 private int idade;
 
-public Paciente( String nome, String cpf, int idade){
+public Beneficiario( String nome, String cpf, int idade){
     this.nome = nome;
     this.cpf = cpf;
     this.idade = idade;
@@ -34,13 +35,13 @@ public void setIdade(int idade) {
     this.idade = idade;
 }
 
-public boolean autorizaConsulta(){
+public String autorizaConsulta(){
     return "";
 }
 
 @Override
 public String toString() {
-    return "Paciente [cpf=" + cpf + ", idade=" + idade + ", nome=" + nome + "]";
+    return "O(a) paciente " + nome + ", com CPF "+ cpf + " e idade " + idade;
 }
 
 
