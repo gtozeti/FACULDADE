@@ -1,5 +1,3 @@
-// Ex1. Escreva um método para pesquisar por id, na lista ligada. Inclua o atributo id e recursos necessários na classe Produto
-
 public class Metodos {
 
     private Elemento inicio = null, atual, aux;
@@ -39,16 +37,13 @@ public class Metodos {
         while (x != null) {
             Produto y = (Produto) x.getObjeto();
             if (y.getId() == id) {
-                // System.out.println(String.format("\nMarca: %s | Modelo: %s | Ano: %d | ID:
-                // %d", y.getMarca(), y.getModelo(), y.getAno(), y.getId()));
-                // v = false;
                 return y;
 
             }
             x = x.getProx();
         }
         return String.format("\nO Produto com o ID %d não existe", id);
-        // System.out.println(String.format("\nO Produto com o ID %d não existe", id));
+        
     }
 
     public double valorTotal(){
