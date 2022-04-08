@@ -24,9 +24,14 @@ public class UsaLista{
         lista.inserir(c5);
         
         
-       lista.retornaCarro(8);
+        System.out.println("\n"+lista.retornaCarro(4));
         System.out.println("\n");
-       lista.exibir();
+        
+        lista.exibir();
+        System.out.println("\n");
+       
+        lista.remover(4);
+        lista.exibir();
 
         
 
