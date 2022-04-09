@@ -1,9 +1,9 @@
 public class Beneficiario {
 
 // Atributos da superclasse    
-private String nome;
-private String cpf;
-private int idade;
+private final String nome;
+private final String cpf;
+private final int idade;
 
 // Contrutor da superclasse   
 public Beneficiario( String nome, String cpf, int idade){
