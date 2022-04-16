@@ -1,11 +1,10 @@
 // Superclasse abstrata
-public abstract class Beneficiario {
+public abstract class Beneficiario implements Registravel {
 
 // Atributos da superclasse    
 private final String nome;
 private final String cpf;
 private final int idade;
-
 
 // Contrutor da superclasse   
 public Beneficiario( String nome, String cpf, int idade){
@@ -29,12 +28,18 @@ public int getIdade() {
 
 // Métodos abstratos
 public abstract String autorizaConsulta();
+public abstract String numeroRegistro();
+
+// Método para utilização de todas as subclasses
+public String getNumeroRegistro(){
+    return numeroRegistro();
+}
 
 
 // Override do método toString
 @Override
 public String toString() {
-    return "O(a) paciente " + getNome() + ", com CPF "+ getCpf() + " e idade " + getIdade();
+    return "O(a) paciente " + getNome() + ", com CPF "+ getCpf() + " e idade " + getIdade() + ", com registro " + getNumeroRegistro();
 }
 
 
