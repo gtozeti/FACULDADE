@@ -1,5 +1,3 @@
-package lista;
-
 public class Carro {
 
     private String marca;
