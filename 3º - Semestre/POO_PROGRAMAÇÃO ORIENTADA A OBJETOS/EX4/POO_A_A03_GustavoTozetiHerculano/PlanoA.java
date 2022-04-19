@@ -1,9 +1,11 @@
-public class PlanoA  extends Beneficiario{
+public class PlanoA extends Beneficiario{
     
     // Atributos da subclasse
     private String exame1;
     private String exame2;
 
+    // Variável de controle de registro
+    private static long registro = 0;
 
     // Contrutor da subclasse
     public PlanoA(String nome, String cpf, int idade, String exame1, String exame2){
@@ -46,10 +48,15 @@ public class PlanoA  extends Beneficiario{
     // Override do método toString da superclasse, para retorno do método toString da superclasse mais as informações de exames e autorização
     @Override
     public String toString(){
-        return String.format("\n%s, está marcando os exames %s e %s. Status do pedido: %s.",super.toString(), getExame1(), getExame2(), autorizaConsulta());
+        return String.format("\n%s, está marcando os exames %s e %s.\nStatus do pedido: %s.",super.toString(), getExame1(), getExame2(), autorizaConsulta());
     }
 
-
+    // Metodo para carregar o contrato com a interface Registravel, retornando um número de registro com padrão de inicio em 8000, para o Plano A
+    @Override
+    public String numeroRegistro(){
+        registro = registro + 1;
+        return String.format("8000%d", registro);
+    }
         
     }
     
