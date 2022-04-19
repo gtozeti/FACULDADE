@@ -1,6 +1,4 @@
-// Ex1. Escreva um método para pesquisar por id, na lista ligada. Inclua o atributo id e recursos necessários na classe carro
-
-public class Lista {
+public class ListaSimples {
 
     private Elemento inicio = null, atual, aux;
 
@@ -27,29 +25,34 @@ public class Lista {
         }
     }
 
-    /**
-     * Pesquisa objetos da lista ligada simples
-     * 
-     * @param id
-     * @return Objeto Carro
-     */
-    public Object retornaCarro(int id) {
+    public Object retornaProduto(int id) {
         Elemento x = inicio;
 
         while (x != null) {
-            Carro y = (Carro) x.getObjeto();
+            Produto y = (Produto) x.getObjeto();
             if (y.getId() == id) {
-                // System.out.println(String.format("\nMarca: %s | Modelo: %s | Ano: %d | ID:
-                // %d", y.getMarca(), y.getModelo(), y.getAno(), y.getId()));
-                // v = false;
                 return y;
 
             }
             x = x.getProx();
         }
-        return String.format("\nO carro com o ID %d não existe", id);
-        // System.out.println(String.format("\nO carro com o ID %d não existe", id));
+        return String.format("\nO Produto com o ID %d não existe", id);
+        
     }
+
+    public double valorTotal(){
+        Elemento x = inicio;
+        double soma = 0.0;
+
+        while (x != null) {
+            Produto y = (Produto) x.getObjeto();
+            soma += y.getPreco();
+            x = x.getProx();
+
+            }
+            return soma;
+        }
+    
 
     public boolean remover(int id) {
         Elemento[] v = pesquisarRemove(id);
@@ -81,9 +84,9 @@ public class Lista {
     private Elemento[] pesquisarRemove(int id) {
         Elemento x = inicio, auxRem = null;
         Elemento[] v = { x, auxRem };
-        Carro c;
+        Produto c;
         while (x != null) {
-            c = (Carro) x.getObjeto();
+            c = (Produto) x.getObjeto();
             if (id == c.getId()) {
                 v[0] = x;
                 v[1] = auxRem;
