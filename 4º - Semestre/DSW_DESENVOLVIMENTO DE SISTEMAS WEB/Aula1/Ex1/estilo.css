@@ -1,25 +1,56 @@
 body{
     color: white;
-    background-color: rgb(69, 69, 117);
+    background-color: rgba(31,55,99,255);
     font-family: "Lucida Sans Unicode","Lucida Grande",sans-serif;
+    margin: 40px;
 }
 
 h3{
     padding: 10px;
 }
 
+h2{
+    margin-bottom: 100px;
+}
+
 li{
     list-style-type: none;
 }
 
+#foto > div {
+	display: block;
 
-#imageinfo{
-    float: left;
-    margin: 50px 25px 10px 20px;
 }
 
-#experienciaprofissional{
-    float: right;
-    display: flex;
-    flex-wrap: wrap;
+#dados {
+	display: grid;
+	 grid-template-columns: 50% 50%;
+
+}
+
+.borda {
+    margin: 10px;
+	border: 1px solid rgba(68,114,196,255);
+    background-color: rgba(68,114,196,255);
+}
+
+#idiomas {
+	display: grid;
+	 grid-template-columns: 100%;
+
+}
+
+table {
+    border-collapse:collapse;
+    width: 90%;
+    margin: 10px;
+    text-align: center;
+  }
+  
+td {
+  border: 1px solid black;
+}
+
+a { 
+    color: white;
 }
