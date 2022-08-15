@@ -1,12 +1,15 @@
-public class PessoaFisica {
+package Ex1;
+public class PessoaFisica extends Pessoa {
 
     private long cpf;
 
-    public PessoaFisica(long cpf) {
+    public PessoaFisica(String nome, long cpf) {
+        super(nome);
         this.cpf = cpf;
     }
 
     public PessoaFisica() {
+        super();
     };
 
     public long getCpf() {
@@ -19,7 +22,8 @@ public class PessoaFisica {
 
     @Override
     public String toString() {
-        return "CPF = " + cpf;
+        return "Nome = " + this.getNome()+ " | CPF = " + cpf;
     }
+
 
 }

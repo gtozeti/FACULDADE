@@ -1,12 +1,15 @@
-public class Funcionario {
+package Ex1;
+public class Funcionario extends PessoaFisica {
 
     private int matricula;
 
-    public Funcionario(int matricula) {
+    public Funcionario(String nome, long cpf, int matricula) {
+        super(nome, cpf);
         this.matricula = matricula;
     }
 
     public Funcionario() {
+        super();
     };
 
     public int getMatricula() {
@@ -19,7 +22,7 @@ public class Funcionario {
 
     @Override
     public String toString() {
-        return "Matricula = " + matricula;
+        return "Nome = " + this.getNome()+ " | CPF = " + this.getCpf()+ " | Matricula = " + matricula;
     }
 
 }

@@ -1,12 +1,15 @@
-public class PessoaJuridica {
+package Ex1;
+public class PessoaJuridica extends Pessoa {
 
     private long cnpj;
 
-    public PessoaJuridica(long cnpj) {
+    public PessoaJuridica(String nome, long cnpj) {
+        super(nome);
         this.cnpj = cnpj;
     }
 
     public PessoaJuridica() {
+        super();
     };
 
     public long getCnpj() {
@@ -19,7 +22,7 @@ public class PessoaJuridica {
 
     @Override
     public String toString() {
-        return "CNPJ = " + cnpj;
+        return "Nome = " + this.getNome()+ " | CNPJ = " + cnpj;
     }
 
 }

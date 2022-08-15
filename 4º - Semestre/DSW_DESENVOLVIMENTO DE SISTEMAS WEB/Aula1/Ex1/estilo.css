@@ -1,0 +1,25 @@
+body{
+    color: white;
+    background-color: rgb(69, 69, 117);
+    font-family: "Lucida Sans Unicode","Lucida Grande",sans-serif;
+}
+
+h3{
+    padding: 10px;
+}
+
+li{
+    list-style-type: none;
+}
+
+
+#imageinfo{
+    float: left;
+    margin: 50px 25px 10px 20px;
+}
+
+#experienciaprofissional{
+    float: right;
+    display: flex;
+    flex-wrap: wrap;
+}
