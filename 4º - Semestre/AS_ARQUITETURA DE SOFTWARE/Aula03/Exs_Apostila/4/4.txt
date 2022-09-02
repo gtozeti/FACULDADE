@@ -1,0 +1,3 @@
+4-) Quais são as características que o padrão singleton deve ter?
+
+R: Ele só pode ser instanciado uma única vez e essa mesma classe deve fornecer um ponto global de acesso à essa única  instância.

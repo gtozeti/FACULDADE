@@ -1,0 +1,11 @@
+3-) Leia o trecho de uma possível conversa entre dois programadores e identifique os designs patterns contidos nela.
+
+Programador 1:
+“Nessa sprint vou refatorar aquele trecho utilizando um método fábrica. O que você acha?”
+
+Programador 2:
+“Boa ideia! Falando nisso...
+ Podemos utilizar a composição para implementar aquela hierarquia, aproveitando a sua natureza recursiva!”
+
+R: Programador 1: Factory Method
+R: Programador 2: Composite
