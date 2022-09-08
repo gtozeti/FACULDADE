@@ -1,0 +1,3 @@
+2-) Defina padrões de projeto: 
+
+Padrões de Projeto são soluções para problemas comuns que encontramos no desenvolvimento ou manutenção de um software orientado a objetos (não são tão bem aplicáveis em outros paradigmas).
