@@ -1,3 +1,5 @@
+# 2022_3_EP_4MA_ADO1 -> Gustavo Tozeti Herculano
+
 import csv  # ---> Importação da biblioteca para leitura do dados do arquivo csv
 import math # ---> Importação da biblioteca para operações de potência e raíz
 
