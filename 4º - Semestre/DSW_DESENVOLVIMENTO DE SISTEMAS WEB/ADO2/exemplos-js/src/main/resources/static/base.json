@@ -1,0 +1,52 @@
+{
+    "nome": "Gustavo Tozeti Herculano",
+    "imagem": "url-imagem",
+    "email": "gtozeti@gmail.com",
+    "telefone": "(11) 99876-4321",
+    "dataNascimento": "1999-09-29",
+    "linkedin": "https://www.linkedin.com/in/gustavo-tozeti-herculano/",
+    "github": "https://github.com/gtozeti",
+    "experienciasProfissionais": [
+        {
+            "empresa": "Prime Control",
+            "cargo": "Analista de Testes Júnior",
+            "dataInicio": "2020-01-20",
+            "dataTermino": "2022-02-15"
+        },
+        {
+            "empresa": "E-Vertical",
+            "cargo": "Técnico de Sistemas Pleno II",
+            "dataInicio": "2017-03-10",
+            "dataTermino": "2020-01-20"
+        }
+    ],
+    "formacaoAcademica": [
+        {
+            "curso": "Tecnologia em Análise e Desenvolvimento de Sistemas",
+            "instituicao": "Centro Universitário Senac"
+        },
+        {
+            "curso": "Tecnologia em Automação Industrial",
+            "instituicao": "Instituto Federal de Educação, Ciência e Tecnologia de São Paulo"
+        }
+    ],
+    "conhecimentos": [
+        "Java",
+        "SQL",
+        "Python"
+    ],
+    "idiomas": [
+        {
+            "idioma": "Inglês",
+            "leitura": "Avançado",
+            "escrita": "Intermediário",
+            "conversacao": "Intermediário"
+        },
+        {
+            "idioma": "Espanhol",
+            "leitura": "Básico",
+            "escrita": "Básico",
+            "conversacao": "Básico"
+        }
+    ]
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Página pessoal</title>
+        <link rel="stylesheet" href="estilos.css" />
+    </head>
+
+    <body>
+        <article>
+            <div id="linha-principal">
+                <div id="col-esq">
+                    <section id="dados-contato">
+                        <div>
+                            <img src="./img.png" alt="Foto do perfil" />
+                        </div>
+                        <h1 id="nome"></h1>
+                        <p>Telefone: <span id="telefone"></span></p>
+                        <p>E-mail: <span id="email"></span></p>
+                        <p>Data de nascimento: <span id="dtnascimento"></span></p>
+                        <p>LinkedIn:
+                            <a id="linkedin" href="" target="blank"></a>
+                        </p>
+                        <p>Github:
+                            <a id="github" href="" target="blank"></a>
+                        </p>
+                    </section>
+                    <section id="conhecimentos" class="secao-dados">
+                        <h2>Conhecimentos</h2>
+                        <ul id="destaques"></ul>
+                    </section>
+                </div>
+                <div id="col-dir">
+                    <section id="exp-prof" class="secao-dados">
+                        <h2>Experiências profissionais</h2>
+                        <ul id="experienciasProfissionais"></ul>
+                    </section>
+                    <section id="form-acad" class="secao-dados">
+                        <h2>Formação acadêmica</h2>
+                        <ul id="formacaoAcademica"></ul>
+                    </section>
+                </div>
+            </div>
+            <section id="idiomas" class="secao-dados">
+                <h2>Idiomas</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Leitura</th>
+                            <th>Escrita</th>
+                            <th>Conversação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="infoidiomas"></tbody>
+                </table>
+            </section>
+        </article>
+        <script>
+               const xhr = new XMLHttpRequest();
+               xhr.open ('GET', 'base.json');
+            
+               xhr.onload = function() {
+                   if (xhr.status >= 200 && xhr.status < 400) {
+                       
+                       let dados = JSON.parse(xhr.responseText);
+                       
+                       //Informação do título da página
+                       document.title = dados.nome + " - " + document.title;
+                       
+                       //Informação do nome
+                       document.getElementById('nome').innerHTML = dados.nome;
+                       
+                       //Informação do email
+                       document.getElementById('email').innerHTML = dados.email;
+                       
+                       //Informação do telefone
+                       document.getElementById('telefone').innerHTML = dados.telefone;
+                       
+                       //Informação da Data de Nascimento
+                       document.getElementById('dtnascimento').innerHTML = dados.dataNascimento;
+                       
+                       //Informação do LinkedIn
+                       document.getElementById('linkedin').innerHTML = dados.linkedin;
+                       document.getElementById('linkedin').href = dados.linkedin;
+                      
+                        //Informação do GitHub
+                       document.getElementById('github').innerHTML = dados.github;
+                       document.getElementById('github').href = dados.github;
+//                    
+                       // Informações sobre Experiências Profissionais
+                       for (const exp of dados.experienciasProfissionais) {
+                           document.getElementById('experienciasProfissionais').insertAdjacentHTML('beforeend',
+                            '<li>\n\
+                                <h3>'+exp.empresa+'</h3>\n\
+                                    <p><strong>'+exp.cargo+'</strong></p>\n\
+                                    <p>Período: <strong>'+exp.dataInicio+' - '+exp.dataTermino+'</strong></p>\n\
+                            </li>');
+                       }
+                       
+                       // Informações sobre Formção Acadêmica
+                       for (const acad of dados.formacaoAcademica) {
+                          document.getElementById('formacaoAcademica').insertAdjacentHTML('beforeend',
+                            '<li>\n\
+                                <h3>'+acad.curso+'</h3>\n\
+                                <p><strong>'+acad.instituicao+'</strong></p>\n\
+                            </li>');
+                       }
+                       
+                       // Informações sobre Conhecimentos
+                       for (const c of dados.conhecimentos) {
+                          document.getElementById('destaques').insertAdjacentHTML('beforeend',
+                            '<li>'+c+'</li>');
+                       }
+                       
+                       // Informações sobre Idiomas
+                       for (const idioma of dados.idiomas) {
+                          document.getElementById('infoidiomas').insertAdjacentHTML('beforeend',
+                            '<tr>\n\
+                                <th>'+idioma.idioma+'</th>\n\
+                                <td>'+idioma.leitura+'</td>\n\
+                                <td>'+idioma.escrita+'</td>\n\
+                                <td>'+idioma.conversacao+'</td>\n\
+                            </tr>');
+                       }
+                   }
+               };
+            
+               xhr.send();
+        </script>    
+    </body>
+</html>
