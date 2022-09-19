@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ExemplosJsApplication<exemplos-js>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.senac.tads.dsw.exemplos.ExemplosJsApplication",
+            "projectName": "exemplos-js",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

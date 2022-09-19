@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Exemplo JS 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .item {
+                border: 5px dotted #ccc;
+                padding: 10px;
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Exemplo 2 - Carregar HTML complexo</h1>
+        <div id='conteudo'>
+            
+        </div>
+        <button id='btncarregar'>Inserir dados</button>
+        <script>
+            let nome = 'Xiaolin Matador de Porco';
+            let email = 'powerguido@teste.com';
+            let telefone = '(11) 93213-2345';
+            
+            let conteudo = '<article class="item"><h2>' + nome + '</h2>' +
+                    '<p>E-mail: <span>' + email + '</span></p>' +
+                    '<p>Telefone: <span>' + telefone + '</span></p></article>';
+                    
+            
+            function carregarInformacoes (){
+                document.getElementById('conteudo').insertAdjacentHTML('beforeend',conteudo);
+            }document.getElementById('btncarregar').onclick = carregarInformacoes;
+            
+           
+        </script>
+    </body>
+</html>
