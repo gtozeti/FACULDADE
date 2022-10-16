@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<head>
+    <title th:text= "${dados.nome}"></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/estilos.css}" />
+</head>
+
+<body>
+    <article>
+        <div id="linha-principal">
+            <div id="col-esq">
+                <section id="dados-contato">
+                    <div>
+                        <img th:src="@{/img.png}" alt="Foto do perfil" />
+                    </div>
+                    <h1 th:text="${dados.nome}"></h1>
+                    <p>Telefone: <span th:text="${dados.telefone}"></span></p>
+                    <p>E-mail: <span th:text="${dados.email}"></span></p>
+                    <p>Data de nascimento: <span th:text="${dados.nascimento}"></span></p>
+                    <p>LinkedIn:
+                        <a th:text ="${dados.linkedin}" th:href="${dados.linkedin}" target="blank">
+                        </a>
+                    </p>
+                    <p>Github:
+                        <a th:text ="${dados.github}" th:href="${dados.github}" target="blank">
+                        </a>
+                    </p>
+                </section>
+                <section id="conhecimentos" class="secao-dados">
+                    <h2>Conhecimentos</h2>
+                    <ul th:each=" item : ${dados.conhecimentos}">
+                        <li th:text= "${item.titulo}" ></li>
+                    </ul>
+                </section>
+            </div>
+            <div id="col-dir">
+                <section id="exp-prof" class="secao-dados">
+                    <h2>Experiências profissionais</h2>
+                    <ul >
+                        <li th:each="item : ${dados.exp_profissionais}">
+                            <h3 th:text="${item.empresa}"></h3>
+                            <p><strong th:text="${item.cargo}"></strong></p>
+                            <p>Período: <strong th:text="${item.dataInicio}"></strong> | <strong th:text="${item.dataTermino}"></strong></p>
+                        </li>
+                    </ul>
+                </section>
+                <section id="form-acad" class="secao-dados">
+                    <h2>Formação acadêmica</h2>
+                    <ul>
+                        <li th:each="item : ${dados.exp_academicas}">
+                            <h3 th:text="${item.curso}"></h3>
+                            <p><strong th:text="${item.instituicao}"></strong></p>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+        <section id="idiomas" class="secao-dados">
+            <h2>Idiomas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>Leitura</th>
+                        <th>Escrita</th>
+                        <th>Conversação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="item : ${dados.idiomas}">
+                        <th th:text="${item.idioma}"></th>
+                        <td th:text="${item.leitura}"></td>
+                        <td th:text="${item.escrita}"></td>
+                        <td th:text="${item.conversacao}"></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+    </article>
+</body>
+
+</html>
