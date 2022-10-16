@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exemplo 3 - MVC</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/estilos.css}"/>
+    </head>
+    <body>
+        <div>
+            <h1 data-th-text="${tituloAttr}">Exemplo 3</h1>
+            <h1 th:text="${dataHoraAttr}"></h1>
+            <h1 th:text="${numeroAttr}"></h1>
+        </div>
+    </body>
+</html>
