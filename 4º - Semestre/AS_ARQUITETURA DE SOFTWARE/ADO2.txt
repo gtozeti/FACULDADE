@@ -1,0 +1,134 @@
+public interface Observer {
+    public void update(Acoes acoes);
+}
+
+===================================
+
+
+public interface Subject {
+
+    public void addObserver(Observer observer);
+    
+    public void addAcoes(Acoes acoes);
+    
+    public void notificar();
+    
+    public void deleteObserver(Observer observer);
+
+}
+
+
+
+===================================
+
+public enum Acoes {
+    AVANCAR, RECUAR, ESQUERDA, DIREITA;
+}
+
+===================================
+
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class NaveJogador implements Subject {
+
+    private List<Observer> observadores = new LinkedList<>();
+    private List<Acoes> listaAcoes = new LinkedList<>();
+    private int index = -1;
+
+    private final static NaveJogador nave = new NaveJogador();
+
+    private NaveJogador() {
+    };
+
+    public static NaveJogador getInstance() {
+      
+        return nave;
+        }
+        
+
+    @Override
+    public void addObserver(Observer observer) {
+        observadores.add(observer);
+
+    }
+
+    @Override
+    public void addAcoes(Acoes acoes) {
+        listaAcoes.add(acoes);
+        index++;
+        notificar();
+
+    }
+
+    @Override
+    public void notificar() {
+        for (Observer observer : observadores) {
+            observer.update(listaAcoes.get(index));
+        }
+    }
+
+    @Override
+    public void deleteObserver(Observer observer) {
+        observadores.remove(observer);
+        System.out.println(observer.toString() + " Destruída!!");
+    }
+
+}
+
+===================================
+
+public class NaveInimiga implements Observer {
+
+    private String nome;
+
+    public NaveInimiga(String nome, Subject subject) {
+        this.nome = nome;
+        subject.addObserver(this);
+    }
+
+    @Override
+    public void update(Acoes acoes) {
+        System.out.println(nome + " " + acoes);
+
+    }
+
+    @Override
+    public String toString() {
+        return nome;
+    }
+
+    
+
+}
+
+
+===================================
+
+
+import java.util.Random;
+
+public class ExemploObserver {
+    public static void main(String[] args) {
+        Subject jogador = NaveJogador.getInstance();
+        Observer naveInimiga2 = new NaveInimiga("Nave2", jogador);
+        Observer naveInimiga1 = new NaveInimiga("Nave1", jogador);
+
+        Random r = new Random();
+
+        for (int i = 0; i < 5; i++) {
+            
+            jogador.addAcoes(Acoes.values()[r.nextInt(4)]);
+
+        }
+        jogador.deleteObserver(naveInimiga1);
+        jogador.deleteObserver(naveInimiga2);
+    }
+}
+
+
+===================================
+
+
+
