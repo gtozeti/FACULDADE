@@ -1,0 +1,53 @@
+<html layout:decorate="~{modelo}">
+    <head>
+        <meta charset="UTF-8" />
+        <title>TADS DSW - Turma A - Cadastro de músicas - Gustavo Tozeti Herculano</title>
+    </head>
+    <body>
+        <main class="container" layout:fragment="conteudo">
+            <div class="row">
+                <section class="col-md-12">
+                    <h1>Inclusão de nova música</h1>
+                    <form th:action="@{/musicas/incluir}" method="post" th:object="${musica}" novalidate>
+                        <div class="form-group row">
+                            <label for="txtTitulo" class="col-sm-2 col-form-label">Título</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="titulo" class="form-control"
+                                       th:classappend="${#fields.hasErrors('titulo')}? is-invalid" id="txtTitulo" placeholder="Preencha o título da música"
+                                       th:field="*{titulo}">
+                                <div class="invalid-feedback" th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}"></div>
+                            </div>        
+                        </div>
+                        <div class="form-group row">
+                            <label for="txtArtista" class="col-sm-2 col-form-label">Artista</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="artista" class="form-control"
+                                       th:classappend="${#fields.hasErrors('artista')}? is-invalid" id="txtArtista" placeholder="Preencha o nome do artista"
+                                       th:field="*{artista}">
+                                <div class="invalid-feedback" th:if="${#fields.hasErrors('artista')}" th:errors="*{artista}"></div>
+                            </div>        
+                        </div>
+                        <div class="form-group row">
+                            <label for="txtAno" class="col-sm-2 col-form-label">Ano de lançamento</label>
+                            <div class="col-sm-10">
+                                <input type="number" name="ano" class="form-control"
+                                       th:classappend="${#fields.hasErrors('ano')}? is-invalid" id="txtAno" placeholder="Preencha o ano de lançamento da música"
+                                       th:field="*{ano}">
+                                <div class="invalid-feedback" th:if="${#fields.hasErrors('ano')}" th:errors="*{ano}"></div>
+                            </div>        
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3 offset-md-3">
+                                <a th:href="@{/musicas}" role="button" class="btn btn-block btn-outline-dark">Cancelar</a>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="submit" class="btn btn-block btn-success">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </main>
+    </body>
+</html>

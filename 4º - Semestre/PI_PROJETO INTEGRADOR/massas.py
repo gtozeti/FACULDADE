@@ -4,7 +4,7 @@ from fordev.generators import people
 URL = 'http://192.168.15.16:8080/'
 
 login = {
-    "email": "manhattan@email.com",
+    "email": "matheusbatuque@gmail.com",
     "password": "senha123"
 }
 
@@ -13,7 +13,7 @@ h = {
 }
 
 
-req = requests.post(f'{URL}profissional/login',json=login, headers=h)
+req = requests.post(f'{URL}api/v1/login',json=login, headers=h)
 tk = req.headers['Authorization']
 
 
@@ -28,7 +28,7 @@ for d in dados:
             "dataNascimento" : f'{d["data_nasc"].split("/")[2]}-{d["data_nasc"].split("/")[1]}-{d["data_nasc"].split("/")[0]}',
             "genero" : d['sexo'].upper()
     }
-    requests.post(f'{URL}cliente/register',json=p, headers={
+    requests.post(f'{URL}api/v1/cliente/register',json=p, headers={
         "Authorization": f'Bearer {tk}',
         'Content-Type': 'application/json'
     })
