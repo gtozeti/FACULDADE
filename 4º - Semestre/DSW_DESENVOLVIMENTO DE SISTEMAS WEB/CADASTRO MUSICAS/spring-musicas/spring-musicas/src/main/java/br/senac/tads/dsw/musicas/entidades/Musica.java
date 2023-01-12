@@ -38,7 +38,7 @@ public class Musica implements Serializable {
     @NotNull(message = "Campo Ano de lançamento não pode ser vazio")
     @Min(value = 1,message = "Ano deve ser um valor positivo")
     @Max(value = 2022 ,message = "Valor do ano não deve ser futuro")
-    private short ano;
+    private int ano;
 
     public Musica() {
     }
@@ -74,11 +74,11 @@ public class Musica implements Serializable {
         this.artista = artista;
     }
 
-    public short getAno() {
+    public int getAno() {
         return ano;
     }
 
-    public void setAno(short ano) {
+    public void setAno(int ano) {
         this.ano = ano;
     }
 
